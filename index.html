@@ -1,0 +1,1896 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Margaux Grego — Supply Chain & Planification</title>
+<meta name="description" content="Portfolio de Margaux Grego, étudiante en BUT QLIO, en recherche d'alternance en planification.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23faf6ed'/><text x='50' y='62' text-anchor='middle' font-family='Georgia, serif' font-size='38' font-weight='600' fill='%23c89030'>M.G</text></svg>">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500;1,9..144,600&family=DM+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    /* Palette inspirée de la nouvelle photo : moutarde + brun tendre + crème */
+    --bg: #faf6ed;          /* Crème lumineux */
+    --bg-warm: #f3ebd8;     /* Crème un peu plus chaud */
+    --surface: #ffffff;
+    --ink: #2a1f15;         /* Brun chocolat foncé pour le texte */
+    --ink-soft: #5a4938;
+    --ink-light: #9a8a78;
+    --line: #e6dcc6;
+    --accent: #c89030;       /* Moutarde / ocre profond (titres) */
+    --accent-deep: #9a6b1d;  /* Moutarde plus profond */
+    --accent-light: #fbe9c4; /* Moutarde poudré (fonds badges) */
+    --secondary: #6e4a2a;    /* Brun caramel (accents secondaires) */
+    --secondary-light: #ebd9c4; /* Brun poudré */
+    --warm: #d9a342;         /* Doré chaud (détails) */
+    --warm-light: #f5e4be;   /* Doré poudré */
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; scroll-padding-top: 100px; }
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.65;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+  ::selection { background: var(--accent); color: var(--bg); }
+  h1, h2, h3 {
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    line-height: 1.05;
+  }
+  a { color: inherit; text-decoration: none; }
+
+  /* ─── NAVIGATION ─────────────────────────────── */
+  nav {
+    position: fixed;
+    top: 24px; left: 24px; right: 24px;
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    z-index: 100;
+    padding: 16px 32px;
+    border-radius: 100px;
+    border: 1px solid var(--line);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .logo {
+    font-family: 'Fraunces', serif;
+    font-size: 21px;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--accent);
+  }
+  .logo-photo {
+    width: 38px; height: 38px;
+    border-radius: 50%;
+    overflow: hidden;
+    background: var(--accent-light);
+    flex-shrink: 0;
+    border: 2px solid var(--accent);
+  }
+  .logo-photo img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    object-position: center top;
+  }
+  .logo-dot {
+    width: 9px; height: 9px;
+    border-radius: 50%;
+    background: var(--accent);
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.6; transform: scale(1.25); }
+  }
+  .nav-links {
+    display: flex;
+    gap: 4px;
+    list-style: none;
+    font-size: 14px;
+    font-weight: 500;
+  }
+  .nav-links a {
+    padding: 9px 18px;
+    border-radius: 100px;
+    color: var(--ink-soft);
+    transition: all 0.25s ease;
+  }
+  .nav-links a:hover { background: var(--accent); color: var(--bg); }
+  /* Onglet "Documents" mis en avant en permanence pour les recruteurs */
+  .nav-links a.nav-highlight {
+    background: var(--accent);
+    color: var(--bg);
+    font-weight: 600;
+  }
+  .nav-links a.nav-highlight:hover {
+    background: var(--accent-deep);
+  }
+  .mobile-toggle {
+    display: none;
+    background: var(--accent);
+    color: var(--bg);
+    border: none;
+    padding: 9px 16px;
+    border-radius: 100px;
+    font-size: 13px;
+    cursor: pointer;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 500;
+  }
+
+  /* ─── COMMON ─────────────────────────────── */
+  section { padding: 110px 48px; position: relative; }
+  .container { max-width: 1200px; margin: 0 auto; position: relative; z-index: 2; }
+  .section-header { margin-bottom: 70px; max-width: 920px; }
+  .section-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 7px 18px;
+    background: var(--secondary-light);
+    color: var(--secondary);
+    border-radius: 100px;
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 28px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+  .section-tag::before {
+    content: '';
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--secondary);
+  }
+  .section-title {
+    font-size: clamp(40px, 5.5vw, 76px);
+    margin-bottom: 24px;
+    color: var(--accent);
+  }
+  .section-title em {
+    font-style: italic;
+    color: var(--ink);
+    font-weight: 400;
+  }
+  .section-intro {
+    font-size: 17px;
+    color: var(--ink-soft);
+    max-width: 640px;
+    line-height: 1.7;
+  }
+
+  /* ─── HERO style branding ─────────────────────────────── */
+  .hero {
+    padding: 130px 48px 90px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-wrap {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1.05fr;
+    gap: 60px;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+  }
+  .hero-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 9px 20px;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 100px;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--ink-soft);
+    margin-bottom: 12px;
+  }
+  .hero-rhythm {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 9px 20px;
+    background: var(--accent-light);
+    border: 1px solid var(--warm);
+    border-radius: 100px;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--accent-deep);
+    margin-bottom: 36px;
+    margin-left: 12px;
+  }
+  .hero-rhythm svg {
+    width: 14px; height: 14px;
+    flex-shrink: 0;
+  }
+  .hero-rhythm strong {
+    font-weight: 700;
+    color: var(--accent-deep);
+  }
+  .status-dot {
+    width: 9px; height: 9px;
+    border-radius: 50%;
+    background: #2d8659;
+    box-shadow: 0 0 0 4px rgba(45, 134, 89, 0.25);
+    animation: pulse 2s infinite;
+  }
+  .hero h1 {
+    font-size: clamp(54px, 7.5vw, 110px);
+    margin-bottom: 28px;
+    color: var(--accent);
+    line-height: 0.95;
+  }
+  .hero h1 em {
+    font-style: italic;
+    color: var(--ink);
+    font-weight: 400;
+  }
+  .hero h1 .planif {
+    color: var(--ink);
+    font-style: italic;
+    font-weight: 500;
+  }
+  .hero-tagline {
+    font-size: 18px;
+    color: var(--ink-soft);
+    line-height: 1.65;
+    max-width: 520px;
+    margin-bottom: 36px;
+  }
+  .hero-cta-row {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    margin-bottom: 36px;
+  }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 26px;
+    border-radius: 100px;
+    font-size: 14px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: none;
+    font-family: 'DM Sans', sans-serif;
+  }
+  .btn-primary {
+    background: var(--accent);
+    color: var(--bg);
+  }
+  .btn-primary:hover {
+    background: var(--accent-deep);
+    transform: translateY(-2px);
+    box-shadow: 0 12px 24px -10px rgba(45, 74, 58, 0.4);
+  }
+  .btn-secondary {
+    background: transparent;
+    color: var(--ink);
+    border: 1px solid var(--ink);
+  }
+  .btn-secondary:hover {
+    background: var(--ink);
+    color: var(--bg);
+  }
+  .btn-arrow {
+    width: 24px; height: 24px;
+    background: var(--bg);
+    color: var(--accent);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    transition: transform 0.3s ease;
+  }
+  .btn-primary:hover .btn-arrow { transform: rotate(45deg); }
+
+  .hero-stats-inline {
+    display: flex;
+    gap: 32px;
+    padding-top: 28px;
+    border-top: 1px solid var(--line);
+    flex-wrap: wrap;
+  }
+  .stat-item {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .stat-num {
+    font-family: 'Fraunces', serif;
+    font-size: 28px;
+    color: var(--secondary);
+    font-weight: 600;
+    line-height: 1;
+  }
+  .stat-label {
+    font-size: 11px;
+    color: var(--ink-soft);
+    margin-top: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-weight: 500;
+  }
+
+  /* Photo en carte carrée arrondie - style épuré */
+  .hero-portrait {
+    position: relative;
+    aspect-ratio: 4/5;
+    max-width: 480px;
+    margin-left: auto;
+  }
+  .portrait-frame {
+    width: 100%;
+    height: 100%;
+    border-radius: 28px;
+    overflow: hidden;
+    box-shadow: 0 30px 60px -20px rgba(31, 29, 26, 0.25);
+    position: relative;
+  }
+  .portrait-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+  }
+  .portrait-frame::before {
+    content: '';
+    position: absolute;
+    top: 18px; right: 18px;
+    width: 12px; height: 12px;
+    border-radius: 50%;
+    background: var(--accent);
+    box-shadow: 0 0 0 4px rgba(200, 144, 48, 0.35);
+    z-index: 2;
+  }
+  @keyframes float {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-12px) rotate(8deg); }
+  }
+
+  /* ─── ABOUT ─────────────────────────────── */
+  .about {
+    background: var(--surface);
+  }
+  .about-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 70px;
+    align-items: center;
+  }
+  .about-photo-wrap {
+    position: relative;
+    aspect-ratio: 4/5;
+    max-width: 480px;
+  }
+  .about-photo {
+    width: 100%;
+    height: 100%;
+    border-radius: 28px;
+    overflow: hidden;
+    background: var(--accent-light);
+    box-shadow: 0 30px 60px -20px rgba(31, 29, 26, 0.25);
+  }
+  .about-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .about-text-block p {
+    font-size: 17px;
+    color: var(--ink);
+    margin-bottom: 22px;
+    line-height: 1.75;
+  }
+  .about-text-block p:last-of-type { margin-bottom: 32px; }
+  .about-text-block strong {
+    color: var(--accent);
+    font-weight: 600;
+  }
+  .info-strip {
+    background: var(--bg);
+    border-radius: 16px;
+    padding: 24px 28px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  .info-mini {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .info-mini-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: var(--ink-light);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+  .info-mini-value {
+    font-size: 14px;
+    color: var(--ink);
+    font-weight: 500;
+  }
+
+  /* ─── EDUCATION ─────────────────────────────── */
+  .education { background: var(--bg); }
+  .edu-grid { display: grid; gap: 16px; }
+  .edu-card {
+    background: var(--surface);
+    border-radius: 20px;
+    padding: 32px 36px;
+    display: grid;
+    grid-template-columns: 160px 1fr;
+    gap: 32px;
+    align-items: start;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    border: 1px solid var(--line);
+    position: relative;
+    overflow: hidden;
+  }
+  .edu-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 20px 40px -20px rgba(31, 29, 26, 0.12);
+    border-color: var(--accent);
+  }
+  .edu-card.current {
+    background: var(--accent);
+    color: var(--bg);
+    border-color: var(--accent);
+  }
+  .edu-card.current .edu-place,
+  .edu-card.current .edu-date { color: rgba(250, 247, 240, 0.7); }
+  .edu-card.current .edu-content { color: rgba(250, 247, 240, 0.9); }
+  .edu-card.current::after {
+    content: 'EN COURS';
+    position: absolute;
+    top: 24px; right: 24px;
+    background: var(--warm);
+    color: var(--ink);
+    padding: 5px 12px;
+    border-radius: 100px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+  }
+  .edu-date {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--ink-light);
+    letter-spacing: 0.04em;
+    padding-top: 4px;
+  }
+  .edu-main h3 { font-size: 24px; margin-bottom: 6px; color: inherit; }
+  .edu-place {
+    font-size: 13px;
+    color: var(--ink-soft);
+    margin-bottom: 14px;
+    font-weight: 500;
+  }
+  .edu-content { font-size: 14px; color: var(--ink-soft); line-height: 1.7; }
+  .edu-content ul { list-style: none; padding: 0; }
+  .edu-content li {
+    padding-left: 20px;
+    position: relative;
+    margin-bottom: 6px;
+  }
+  .edu-content li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: inherit;
+    font-weight: 600;
+  }
+
+  /* ─── EXPERIENCE - fond clair, plus de bleu nuit ─────────────────────────────── */
+  .experience { background: var(--surface); }
+  .exp-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  .exp-card {
+    background: var(--bg);
+    border: 1px solid var(--line);
+    border-radius: 20px;
+    padding: 32px;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+  }
+  .exp-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 4px;
+    background: var(--accent);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
+  }
+  .exp-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--accent);
+    box-shadow: 0 20px 40px -20px rgba(31, 29, 26, 0.15);
+  }
+  .exp-card:hover::before { transform: scaleX(1); }
+  .exp-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    margin-bottom: 18px;
+    gap: 12px;
+  }
+  .exp-period {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--accent);
+    letter-spacing: 0.05em;
+    padding: 5px 11px;
+    background: var(--accent-light);
+    border-radius: 100px;
+    white-space: nowrap;
+    font-weight: 600;
+  }
+  .exp-location {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--ink-light);
+  }
+  .exp-card h3 { font-size: 24px; color: var(--ink); margin-bottom: 6px; }
+  .exp-company {
+    font-size: 13px;
+    color: var(--accent);
+    margin-bottom: 18px;
+    font-weight: 600;
+  }
+  .exp-tasks {
+    list-style: none;
+    color: var(--ink-soft);
+    font-size: 14px;
+    line-height: 1.7;
+  }
+  .exp-tasks li {
+    padding-left: 18px;
+    position: relative;
+    margin-bottom: 7px;
+  }
+  .exp-tasks li::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 9px;
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--accent);
+  }
+
+  /* ─── SKILLS ─────────────────────────────── */
+  .skills { background: var(--bg); }
+  .skills-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+  .skill-block {
+    background: var(--surface);
+    border-radius: 20px;
+    padding: 32px;
+    border: 1px solid var(--line);
+    transition: all 0.3s ease;
+  }
+  .skill-block:hover { border-color: var(--accent); }
+  .skill-block-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 24px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid var(--line);
+  }
+  .skill-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--accent);
+    background: var(--accent-light);
+    padding: 5px 10px;
+    border-radius: 6px;
+    font-weight: 600;
+  }
+  .skill-block h3 { font-size: 20px; flex: 1; color: var(--ink); }
+  .skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .skill-chip {
+    padding: 8px 14px;
+    background: var(--bg);
+    border-radius: 100px;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--ink);
+    border: 1px solid transparent;
+    transition: all 0.2s ease;
+  }
+  .skill-chip:hover {
+    background: var(--accent);
+    color: var(--bg);
+  }
+  .skill-chip.primary {
+    background: var(--accent);
+    color: var(--bg);
+  }
+  .skill-chip.primary:hover { background: var(--accent-deep); }
+  .skill-chip .level {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    margin-left: 6px;
+    opacity: 0.75;
+  }
+  .lang-block {
+    margin-top: 24px;
+    background: var(--secondary);
+    color: var(--bg);
+    border-radius: 20px;
+    padding: 36px;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    gap: 36px;
+    align-items: center;
+  }
+  .lang-block h3 { font-size: 28px; color: var(--bg); }
+  .lang-block h3 em { color: var(--warm); font-style: italic; }
+  .lang-list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+  .lang-item {
+    border-left: 2px solid var(--warm);
+    padding-left: 14px;
+  }
+  .lang-name {
+    font-family: 'Fraunces', serif;
+    font-size: 20px;
+    color: var(--bg);
+    margin-bottom: 4px;
+    font-weight: 500;
+  }
+  .lang-level {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: rgba(250, 247, 240, 0.65);
+    letter-spacing: 0.05em;
+  }
+
+  /* ─── DOCUMENTS - Téléchargements pour recruteurs ─────────────────────────────── */
+  .documents { background: var(--bg); }
+  .docs-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+  .doc-card {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 20px;
+    padding: 36px;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    position: relative;
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+  }
+  .doc-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 4px;
+    background: var(--accent);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
+  }
+  .doc-card:hover {
+    transform: translateY(-6px);
+    border-color: var(--accent);
+    box-shadow: 0 30px 60px -30px rgba(31, 29, 26, 0.2);
+  }
+  .doc-card:hover::before { transform: scaleX(1); }
+  .doc-icon {
+    width: 56px; height: 56px;
+    border-radius: 14px;
+    background: var(--accent-light);
+    color: var(--accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .doc-icon svg {
+    width: 28px; height: 28px;
+  }
+  .doc-content {
+    flex: 1;
+  }
+  .doc-tag {
+    display: inline-block;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--secondary);
+    background: var(--secondary-light);
+    padding: 4px 10px;
+    border-radius: 100px;
+    margin-bottom: 12px;
+    letter-spacing: 0.05em;
+    font-weight: 600;
+  }
+  .doc-card h3 {
+    font-size: 26px;
+    margin-bottom: 10px;
+    color: var(--accent);
+  }
+  .doc-card p {
+    color: var(--ink-soft);
+    font-size: 14px;
+    line-height: 1.65;
+    margin-bottom: 16px;
+  }
+  .doc-meta {
+    display: flex;
+    gap: 16px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--ink-light);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    padding-top: 16px;
+    border-top: 1px solid var(--line);
+  }
+  .doc-meta span {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .doc-meta svg {
+    width: 12px; height: 12px;
+  }
+  .doc-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 11px 20px;
+    background: var(--accent);
+    color: var(--bg);
+    border-radius: 100px;
+    font-size: 13px;
+    font-weight: 600;
+    margin-top: auto;
+    align-self: flex-start;
+    transition: all 0.3s ease;
+  }
+  .doc-card:hover .doc-cta {
+    background: var(--accent-deep);
+    transform: translateX(4px);
+  }
+  .doc-cta-arrow {
+    width: 20px; height: 20px;
+    background: var(--bg);
+    color: var(--accent);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    transition: transform 0.3s ease;
+  }
+  .doc-card:hover .doc-cta-arrow { transform: translateY(2px); }
+
+  .docs-info-strip {
+    margin-top: 32px;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-left: 4px solid var(--warm);
+    border-radius: 16px;
+    padding: 24px 32px;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+  }
+  .docs-info-icon {
+    width: 36px; height: 36px;
+    flex-shrink: 0;
+    color: var(--warm);
+  }
+  .docs-info-strip p {
+    font-size: 14px;
+    color: var(--ink-soft);
+    line-height: 1.65;
+    margin: 0;
+  }
+  .docs-info-strip strong {
+    color: var(--ink);
+    font-weight: 600;
+  }
+
+  /* ─── PROJECTS ─────────────────────────────── */
+  .projects { background: var(--surface); }
+  .project-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  .project-card {
+    background: var(--bg);
+    border: 1px solid var(--line);
+    border-radius: 20px;
+    padding: 36px;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    position: relative;
+    overflow: hidden;
+  }
+  .project-card::before {
+    content: '';
+    position: absolute;
+    top: -60px; right: -60px;
+    width: 180px; height: 180px;
+    background: var(--accent);
+    border-radius: 50%;
+    opacity: 0;
+    filter: blur(50px);
+    transition: opacity 0.4s ease;
+  }
+  .project-card:hover {
+    transform: translateY(-6px);
+    border-color: var(--accent);
+    box-shadow: 0 30px 60px -30px rgba(31, 29, 26, 0.2);
+  }
+  .project-card:hover::before { opacity: 0.15; }
+  .project-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--accent);
+    background: var(--accent-light);
+    padding: 6px 12px;
+    border-radius: 100px;
+    margin-bottom: 18px;
+    letter-spacing: 0.06em;
+    position: relative;
+    z-index: 1;
+    font-weight: 600;
+  }
+  .project-card h3 {
+    font-size: 26px;
+    margin-bottom: 14px;
+    position: relative;
+    z-index: 1;
+    color: var(--ink);
+  }
+  .project-card p {
+    color: var(--ink-soft);
+    font-size: 14px;
+    line-height: 1.75;
+    margin-bottom: 22px;
+    position: relative;
+    z-index: 1;
+  }
+  .project-tools {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding-top: 20px;
+    border-top: 1px solid var(--line);
+    position: relative;
+    z-index: 1;
+  }
+  .tool-chip {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    padding: 6px 11px;
+    background: var(--surface);
+    color: var(--ink-soft);
+    border-radius: 6px;
+    letter-spacing: 0.04em;
+    border: 1px solid var(--line);
+  }
+
+  /* ─── INTERESTS ─────────────────────────────── */
+  .interests { background: var(--bg); }
+  .interests-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  .interest-row {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    gap: 24px;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 20px;
+    padding: 24px;
+    align-items: center;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .interest-row:hover {
+    border-color: var(--accent);
+    transform: translateY(-3px);
+    box-shadow: 0 20px 40px -20px rgba(31, 29, 26, 0.12);
+  }
+  .interest-photo {
+    aspect-ratio: 1;
+    border-radius: 50%;
+    overflow: hidden;
+    background: var(--accent-light);
+  }
+  .interest-photo img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+  }
+  .interest-content h3 {
+    font-size: 22px;
+    margin-bottom: 8px;
+    color: var(--accent);
+  }
+  .interest-content p {
+    font-size: 13px;
+    color: var(--ink-soft);
+    line-height: 1.6;
+  }
+  .quote-block {
+    margin-top: 60px;
+    padding: 40px 48px;
+    background: var(--surface);
+    border-left: 4px solid var(--accent);
+    border-radius: 16px;
+    max-width: 920px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .quote-block p {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 22px;
+    color: var(--ink);
+    line-height: 1.5;
+  }
+  .quote-block .quote-cite {
+    display: block;
+    margin-top: 14px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    font-style: normal;
+    font-weight: 600;
+  }
+
+  /* ─── CONTACT - fond clair avec accent vert ─────────────────────────────── */
+  .contact {
+    background: var(--surface);
+    padding: 130px 48px 70px;
+    position: relative;
+    overflow: hidden;
+  }
+  .contact::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 50%;
+    transform: translateX(-50%);
+    width: 800px; height: 400px;
+    background: radial-gradient(ellipse at center top, var(--accent-light) 0%, transparent 70%);
+    z-index: 0;
+    opacity: 0.5;
+  }
+  .contact-hero {
+    text-align: center;
+    margin-bottom: 60px;
+    position: relative;
+    z-index: 2;
+  }
+  .contact-hero .huge {
+    font-size: clamp(48px, 7vw, 96px);
+    line-height: 1;
+    margin-bottom: 28px;
+    color: var(--accent);
+  }
+  .contact-hero .huge em {
+    font-style: italic;
+    color: var(--ink);
+  }
+  .contact-hero p {
+    font-size: 18px;
+    color: var(--ink-soft);
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  .contact-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    background: var(--accent);
+    color: var(--bg);
+    padding: 18px 32px;
+    border-radius: 100px;
+    font-size: 15px;
+    font-weight: 600;
+    margin-top: 28px;
+    transition: all 0.3s ease;
+  }
+  .contact-cta:hover {
+    background: var(--accent-deep);
+    transform: translateY(-2px);
+    box-shadow: 0 16px 32px -10px rgba(45, 74, 58, 0.4);
+  }
+  .contact-cta-arrow {
+    width: 24px; height: 24px;
+    background: var(--bg);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--accent);
+    font-size: 13px;
+    transition: transform 0.3s ease;
+  }
+  .contact-cta:hover .contact-cta-arrow { transform: rotate(45deg); }
+  .contact-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+  }
+  .contact-card {
+    background: var(--bg);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: 28px;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .contact-card:hover {
+    border-color: var(--accent);
+    background: var(--surface);
+    transform: translateY(-2px);
+  }
+  .contact-card-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--ink-light);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+  .contact-card-value {
+    font-family: 'Fraunces', serif;
+    font-size: 20px;
+    color: var(--ink);
+    font-weight: 500;
+  }
+  .footer {
+    margin-top: 80px;
+    padding: 28px 0;
+    border-top: 1px solid var(--line);
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    color: var(--ink-light);
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    z-index: 2;
+  }
+  .footer-mono {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.06em;
+  }
+
+  /* ─── ANIMATIONS ─────────────────────────────── */
+  .reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ─── RESPONSIVE ─────────────────────────────── */
+  @media (max-width: 900px) {
+    nav { padding: 14px 22px; top: 16px; left: 16px; right: 16px; }
+    .nav-links { display: none; }
+    .nav-links.open {
+      display: flex;
+      position: absolute;
+      top: calc(100% + 12px); left: 0; right: 0;
+      flex-direction: column;
+      background: var(--surface);
+      padding: 18px;
+      gap: 6px;
+      border-radius: 24px;
+      border: 1px solid var(--line);
+    }
+    .mobile-toggle { display: block; }
+
+    .hero { padding: 110px 24px 70px; }
+    .hero-wrap { grid-template-columns: 1fr; gap: 50px; }
+    .hero-portrait { max-width: 360px; margin: 0 auto; }
+    .hero-stats-inline { gap: 24px; }
+    .hero-rhythm { margin-left: 0; font-size: 12px; padding: 8px 16px; }
+
+    section { padding: 80px 24px; }
+    .section-header { margin-bottom: 50px; }
+
+    .about-layout { grid-template-columns: 1fr; gap: 50px; }
+    .about-photo-wrap { max-width: 320px; margin: 0 auto; }
+    .info-strip { grid-template-columns: 1fr; gap: 14px; padding: 20px; }
+
+    .edu-card { grid-template-columns: 1fr; gap: 14px; padding: 26px; }
+    .edu-card.current::after { top: 20px; right: 20px; }
+
+    .exp-grid { grid-template-columns: 1fr; }
+    .exp-card { padding: 28px; }
+
+    .skills-layout { grid-template-columns: 1fr; }
+    .skill-block { padding: 26px; }
+    .lang-block { grid-template-columns: 1fr; gap: 24px; padding: 28px; }
+    .lang-list { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+
+    .project-grid { grid-template-columns: 1fr; }
+    .project-card { padding: 28px; }
+
+    .docs-grid { grid-template-columns: 1fr; gap: 16px; }
+    .doc-card { padding: 28px; }
+    .docs-info-strip { padding: 20px 24px; gap: 14px; flex-direction: column; align-items: flex-start; text-align: left; }
+
+    .interests-grid { grid-template-columns: 1fr; }
+    .interest-row {
+      grid-template-columns: 1fr;
+      gap: 16px;
+      padding: 24px;
+      text-align: center;
+    }
+    .interest-photo { max-width: 180px; margin: 0 auto; }
+
+    .quote-block { padding: 28px 32px; }
+    .quote-block p { font-size: 18px; }
+
+    .contact { padding: 90px 24px 50px; }
+    .contact-grid { grid-template-columns: 1fr; }
+    .footer { flex-direction: column; gap: 8px; text-align: center; }
+
+    .portrait-tag { font-size: 11px; padding: 6px 12px; }
+    .tag-top { right: -10px; }
+    .tag-bottom { left: -10px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ════════════════ NAVIGATION ════════════════ -->
+<nav>
+  <div class="logo">
+    <div class="logo-photo">
+      <img src="images/profil.jpg" alt="Margaux Grego">
+    </div>
+    Margaux Grego
+  </div>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#about">À propos</a></li>
+    <li><a href="#education">Formations</a></li>
+    <li><a href="#experience">Expériences</a></li>
+    <li><a href="#skills">Compétences</a></li>
+    <li><a href="#projects">Projets</a></li>
+    <li><a href="#documents" class="nav-highlight">Documents</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <button class="mobile-toggle" id="mobileToggle">Menu</button>
+</nav>
+
+<!-- ════════════════ HERO style branding personnel ════════════════ -->
+<header class="hero">
+  <div class="hero-wrap">
+    <div>
+      <div class="hero-status">
+        <span class="status-dot"></span>
+        Disponible · Recherche alternance planification
+      </div>
+      <div class="hero-rhythm">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+          <line x1="16" y1="2" x2="16" y2="6"></line>
+          <line x1="8" y1="2" x2="8" y2="6"></line>
+          <line x1="3" y1="10" x2="21" y2="10"></line>
+        </svg>
+        Rythme : <strong>2 semaines entreprise / 1 semaine formation</strong>
+      </div>
+      <h1>
+        Supply chain<br>
+        <em>&</em> <span class="planif">planification</span>
+      </h1>
+      <p class="hero-tagline">
+        Étudiante en BUT QLIO à l'IUT Évry, je construis mon parcours autour
+        de l'analyse de données, de l'optimisation des flux et de la rigueur opérationnelle.
+      </p>
+      <div class="hero-cta-row">
+        <a href="#contact" class="btn btn-primary">
+          Travailler avec moi
+          <span class="btn-arrow">→</span>
+        </a>
+        <a href="#about" class="btn btn-secondary">
+          En savoir plus
+        </a>
+      </div>
+      <div class="hero-stats-inline">
+        <div class="stat-item">
+          <div class="stat-num">4</div>
+          <div class="stat-label">Expériences</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">3</div>
+          <div class="stat-label">Diplômes</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">4</div>
+          <div class="stat-label">Langues</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">5+</div>
+          <div class="stat-label">Ans de sport</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Photo ISC en grande carte arrondie -->
+    <div class="hero-portrait">
+      <div class="portrait-frame">
+        <img src="images/profil.jpg" alt="Margaux Grego">
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ════════════════ ABOUT - photo accrobranche en rond ════════════════ -->
+<section class="about" id="about">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-tag">À propos</span>
+      <h2 class="section-title">Plus qu'un CV<br>une <em>personnalité</em></h2>
+    </div>
+
+    <div class="about-layout">
+      <!-- Photo Le Havre en cadre rectangulaire arrondi épuré -->
+      <div class="about-photo-wrap reveal">
+        <div class="about-photo">
+          <img src="images/lehavre.jpg" alt="Margaux au Havre">
+        </div>
+      </div>
+
+      <div class="reveal">
+        <div class="about-text-block">
+          <p>
+            Je suis quelqu'un de naturellement souriante qui apprécie les <strong>moments
+            simples</strong>. Passer du temps avec mes proches, partager des rires, découvrir
+            de nouveaux endroits ou voyager — voilà ce qui m'épanouit.
+          </p>
+          <p>
+            Le sport, et plus particulièrement <strong>l'athlétisme</strong>, occupe une place
+            centrale dans ma vie. Je m'entraîne au club de Viry-Châtillon depuis 2021. Cette
+            discipline individuelle m'a appris la persévérance et l'importance d'aller au
+            bout de ce que j'entreprends.
+          </p>
+          <p>
+            <strong>Ponctuelle, organisée et rigoureuse</strong> tout en restant solide,
+            j'apprécie quand les choses sont claires et bien faites. C'est cette même
+            exigence que j'applique à mon parcours dans la supply chain.
+          </p>
+        </div>
+        <div class="info-strip">
+          <div class="info-mini">
+            <span class="info-mini-label">Né·e le</span>
+            <span class="info-mini-value">21 / 07 / 2002</span>
+          </div>
+          <div class="info-mini">
+            <span class="info-mini-label">Lieu</span>
+            <span class="info-mini-value">Savigny-sur-Orge</span>
+          </div>
+          <div class="info-mini">
+            <span class="info-mini-label">Permis</span>
+            <span class="info-mini-value">B · Véhicule</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════ EDUCATION ════════════════ -->
+<section class="education" id="education">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-tag">Formation</span>
+      <h2 class="section-title">Un parcours<br><em>pluridisciplinaire</em></h2>
+      <p class="section-intro">
+        Du commerce à la communication, puis à la supply chain — chaque étape
+        m'a apporté une compétence transversale qui enrichit mon profil.
+      </p>
+    </div>
+
+    <div class="edu-grid reveal">
+      <div class="edu-card current">
+        <div class="edu-date">2025 — 2028</div>
+        <div class="edu-main">
+          <h3>BUT QLIO — Organisation et Supply Chain</h3>
+          <div class="edu-place">IUT Évry · En alternance · Évry-Courcouronnes</div>
+          <div class="edu-content">
+            <ul>
+              <li>Planification des besoins (MRP / DRP) et suivi des flux</li>
+              <li>Utilisation d'un ERP (E-prelude)</li>
+              <li>Méthodes Lean : 5S, Kanban, Kaizen</li>
+              <li>Rythme : 1 semaine en formation / 2 semaines en entreprise</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="edu-card">
+        <div class="edu-date">02 / 2026 — 04 / 2026</div>
+        <div class="edu-main">
+          <h3>MicroMasters in Supply Chain Management</h3>
+          <div class="edu-place">MITx · Massachusetts Institute of Technology</div>
+          <div class="edu-content">
+            Cours suivi : Supply Chain Analytics (SC0x). Formation en ligne sur
+            l'approche analytique de la chaîne logistique.
+          </div>
+        </div>
+      </div>
+
+      <div class="edu-card">
+        <div class="edu-date">2023 — 2024</div>
+        <div class="edu-main">
+          <h3>Bachelor Communication & Marketing Digital</h3>
+          <div class="edu-place">ISC Paris · Levallois-Perret</div>
+          <div class="edu-content">
+            Marketing digital, stratégie de contenu, communication d'entreprise
+            et gestion de projet.
+          </div>
+        </div>
+      </div>
+
+      <div class="edu-card">
+        <div class="edu-date">2021 — 2023</div>
+        <div class="edu-main">
+          <h3>BTS Management Commercial Opérationnel</h3>
+          <div class="edu-place">Lycée Jean-Baptiste Corot</div>
+          <div class="edu-content">
+            Management d'équipe, relation client, gestion d'unité commerciale.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════ EXPERIENCE - fond clair ════════════════ -->
+<section class="experience" id="experience">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-tag">Parcours pro</span>
+      <h2 class="section-title">Quatre <em>terrains</em><br>quatre apprentissages</h2>
+      <p class="section-intro">
+        Quatre expériences professionnelles successives qui m'ont forgé un
+        sens de l'organisation, de la relation client et de la gestion logistique.
+      </p>
+    </div>
+
+    <div class="exp-grid reveal">
+      <article class="exp-card">
+        <div class="exp-header">
+          <span class="exp-period">10/2025 → 08/2026</span>
+          <span class="exp-location">Lisses</span>
+        </div>
+        <h3>Assistante logistique</h3>
+        <div class="exp-company">Kube Design · Alternance</div>
+        <ul class="exp-tasks">
+          <li>Gestion des flux entrants et sortants</li>
+          <li>Réception, contrôle et suivi des marchandises</li>
+          <li>Préparation des produits Retail : configuration et contrôle qualité</li>
+          <li>Mise à jour du statut des produits dans le WMS lors des interventions techniciens</li>
+          <li>Suivi des stocks et inventaires</li>
+        </ul>
+      </article>
+
+      <article class="exp-card">
+        <div class="exp-header">
+          <span class="exp-period">09/2024 → 08/2025</span>
+          <span class="exp-location">Saint-Maur-des-Fossés</span>
+        </div>
+        <h3>Factrice</h3>
+        <div class="exp-company">La Poste · Intérim</div>
+        <ul class="exp-tasks">
+          <li>Organisation et distribution du courrier</li>
+          <li>Gestion des tournées et respect des délais</li>
+          <li>Relation client de proximité</li>
+        </ul>
+      </article>
+
+      <article class="exp-card">
+        <div class="exp-header">
+          <span class="exp-period">12/2023 → 09/2024</span>
+          <span class="exp-location">Athis-Mons</span>
+        </div>
+        <h3>Chargée de communication</h3>
+        <div class="exp-company">Biocoop Biovivéo · Alternance</div>
+        <ul class="exp-tasks">
+          <li>Rédaction de newsletters</li>
+          <li>Mise à jour du site internet</li>
+          <li>Animation des réseaux sociaux</li>
+          <li>Participation à la communication terrain</li>
+        </ul>
+      </article>
+
+      <article class="exp-card">
+        <div class="exp-header">
+          <span class="exp-period">08/2021 → 08/2023</span>
+          <span class="exp-location">Corbeil-Essonnes</span>
+        </div>
+        <h3>Vendeuse</h3>
+        <div class="exp-company">Le Coq Sportif · Alternance</div>
+        <ul class="exp-tasks">
+          <li>Accueil et conseil client</li>
+          <li>Encaissement et tenue de caisse</li>
+          <li>Gestion des stocks et inventaires</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════ SKILLS ════════════════ -->
+<section class="skills" id="skills">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-tag">Compétences</span>
+      <h2 class="section-title">Mon <em>savoir-faire</em></h2>
+      <p class="section-intro">
+        Compétences techniques en supply chain en cours d'acquisition,
+        appuyées par des qualités humaines forgées par le sport et le terrain.
+      </p>
+    </div>
+
+    <div class="skills-layout reveal">
+      <div class="skill-block">
+        <div class="skill-block-header">
+          <span class="skill-num">01</span>
+          <h3>Supply Chain</h3>
+        </div>
+        <div class="skill-tags">
+          <span class="skill-chip primary">Planification MRP / DRP</span>
+          <span class="skill-chip primary">ERP E-prelude</span>
+          <span class="skill-chip">Odoo · ERPnext <span class="level">autodidacte</span></span>
+          <span class="skill-chip">Gestion des stocks</span>
+          <span class="skill-chip">Analyse des flux</span>
+          <span class="skill-chip">Méthodes Lean (5S, SIPOC)</span>
+          <span class="skill-chip">Kanban · Kaizen</span>
+        </div>
+      </div>
+
+      <div class="skill-block">
+        <div class="skill-block-header">
+          <span class="skill-num">02</span>
+          <h3>Outils & Analyse</h3>
+        </div>
+        <div class="skill-tags">
+          <span class="skill-chip primary">Excel <span class="level">avancé</span></span>
+          <span class="skill-chip primary">WMS <span class="level">en entreprise</span></span>
+          <span class="skill-chip">Tableaux croisés dynamiques</span>
+          <span class="skill-chip">Power BI <span class="level">en progression</span></span>
+          <span class="skill-chip">Pack Office</span>
+        </div>
+      </div>
+
+      <div class="skill-block">
+        <div class="skill-block-header">
+          <span class="skill-num">03</span>
+          <h3>Soft skills</h3>
+        </div>
+        <div class="skill-tags">
+          <span class="skill-chip">Sens de l'organisation</span>
+          <span class="skill-chip">Rigueur</span>
+          <span class="skill-chip">Souci du détail</span>
+          <span class="skill-chip">Autonomie</span>
+          <span class="skill-chip">Esprit d'équipe</span>
+          <span class="skill-chip">Adaptabilité</span>
+          <span class="skill-chip">Gestion des priorités</span>
+        </div>
+      </div>
+
+      <div class="skill-block">
+        <div class="skill-block-header">
+          <span class="skill-num">04</span>
+          <h3>Métier</h3>
+        </div>
+        <div class="skill-tags">
+          <span class="skill-chip">Vente & relation client</span>
+          <span class="skill-chip">Gestion magasin</span>
+          <span class="skill-chip">Communication digitale</span>
+          <span class="skill-chip">Logistique opérationnelle</span>
+          <span class="skill-chip">Service & distribution</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="lang-block reveal">
+      <h3>Langues <em>parlées</em></h3>
+      <div class="lang-list">
+        <div class="lang-item">
+          <div class="lang-name">Français</div>
+          <div class="lang-level">Maternelle</div>
+        </div>
+        <div class="lang-item">
+          <div class="lang-name">Anglais</div>
+          <div class="lang-level">B1</div>
+        </div>
+        <div class="lang-item">
+          <div class="lang-name">Espagnol</div>
+          <div class="lang-level">A2</div>
+        </div>
+        <div class="lang-item">
+          <div class="lang-name">Chinois</div>
+          <div class="lang-level">A1 · en cours</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════ PROJECTS ════════════════ -->
+<section class="projects" id="projects">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-tag">Projets</span>
+      <h2 class="section-title">Mes <em>réalisations</em></h2>
+      <p class="section-intro">
+        Projets académiques menés dans le cadre de ma formation, qui me permettent
+        de mettre en pratique les outils étudiés.
+      </p>
+    </div>
+
+    <div class="project-grid reveal">
+      <article class="project-card">
+        <span class="project-tag">// Simulation industrielle</span>
+        <h3>Planification pharmaceutique</h3>
+        <p>
+          Cas pratique de gestion des flux et des besoins dans un environnement de
+          production pharmaceutique. Simulation des approvisionnements et arbitrages
+          de planification dans le cadre de mes cours.
+        </p>
+        <div class="project-tools">
+          <span class="tool-chip">MRP</span>
+          <span class="tool-chip">E-prelude</span>
+          <span class="tool-chip">Excel</span>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <span class="project-tag">// Méthodes Lean</span>
+        <h3>5S & SIPOC en halle de production</h3>
+        <p>
+          Application des méthodes 5S et de la cartographie SIPOC en halle de
+          production pédagogique. Identification des entrées-sorties et organisation
+          des postes de travail.
+        </p>
+        <div class="project-tools">
+          <span class="tool-chip">Lean</span>
+          <span class="tool-chip">5S</span>
+          <span class="tool-chip">SIPOC</span>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <span class="project-tag">// Supply Chain Analytics</span>
+        <h3>MicroMasters MITx — SC0x</h3>
+        <p>
+          Formation en ligne du MIT sur l'analyse de la chaîne logistique :
+          modélisation des incertitudes et prise de décision basée sur la donnée.
+          En cours (février → avril 2026).
+        </p>
+        <div class="project-tools">
+          <span class="tool-chip">MIT</span>
+          <span class="tool-chip">Analytics</span>
+          <span class="tool-chip">Statistiques</span>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <span class="project-tag">// Apprentissage</span>
+        <h3>Tableaux de bord Power BI</h3>
+        <p>
+          Apprentissage en cours de la création de tableaux de bord pour le suivi
+          d'indicateurs logistiques. Conception de visualisations actionnables.
+        </p>
+        <div class="project-tools">
+          <span class="tool-chip">Power BI</span>
+          <span class="tool-chip">KPI</span>
+          <span class="tool-chip">Data viz</span>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════ DOCUMENTS - Téléchargements pour recruteurs ════════════════ -->
+<section class="documents" id="documents">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-tag">Documents</span>
+      <h2 class="section-title">À <em>télécharger</em></h2>
+      <p class="section-intro">
+        Mon CV à jour et mon planning d'alternance, disponibles en téléchargement pour
+        que vous puissiez les consulter à votre convenance.
+      </p>
+    </div>
+
+    <div class="docs-grid reveal">
+      <a href="documents/CV_Margaux_Grego.pdf" download class="doc-card">
+        <div class="doc-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+            <line x1="16" y1="13" x2="8" y2="13"></line>
+            <line x1="16" y1="17" x2="8" y2="17"></line>
+            <polyline points="10 9 9 9 8 9"></polyline>
+          </svg>
+        </div>
+        <div class="doc-content">
+          <span class="doc-tag">// CV à jour · 25 avril 2026</span>
+          <h3>Curriculum Vitae</h3>
+          <p>
+            Mon CV complet : formation BUT QLIO, expériences professionnelles,
+            compétences techniques en supply chain, langues et centres d'intérêt.
+          </p>
+          <div class="doc-meta">
+            <span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+              </svg>
+              PDF · 1 page
+            </span>
+            <span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 6 12 12 16 14"></polyline>
+              </svg>
+              Mis à jour 25/04/2026
+            </span>
+          </div>
+        </div>
+        <span class="doc-cta">
+          Télécharger
+          <span class="doc-cta-arrow">↓</span>
+        </span>
+      </a>
+
+      <a href="documents/Planning_Alternance_2026-2027.pdf" download class="doc-card">
+        <div class="doc-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+            <line x1="16" y1="2" x2="16" y2="6"></line>
+            <line x1="8" y1="2" x2="8" y2="6"></line>
+            <line x1="3" y1="10" x2="21" y2="10"></line>
+          </svg>
+        </div>
+        <div class="doc-content">
+          <span class="doc-tag">// Planning BUT3 · 2026-2027</span>
+          <h3>Planning d'alternance</h3>
+          <p>
+            Calendrier officiel de mon alternance pour l'année 2026-2027. Le rythme
+            est de <strong>2 semaines en entreprise / 1 semaine en formation</strong>.
+          </p>
+          <div class="doc-meta">
+            <span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+              </svg>
+              PDF · Année complète
+            </span>
+            <span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                <line x1="16" y1="2" x2="16" y2="6"></line>
+                <line x1="8" y1="2" x2="8" y2="6"></line>
+              </svg>
+              Sept. 2026 → Sept. 2027
+            </span>
+          </div>
+        </div>
+        <span class="doc-cta">
+          Télécharger
+          <span class="doc-cta-arrow">↓</span>
+        </span>
+      </a>
+    </div>
+
+    <div class="docs-info-strip reveal">
+      <svg class="docs-info-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="10"></circle>
+        <line x1="12" y1="16" x2="12" y2="12"></line>
+        <line x1="12" y1="8" x2="12.01" y2="8"></line>
+      </svg>
+      <p>
+        <strong>Mon rythme d'alternance :</strong> 2 semaines en entreprise / 1 semaine en formation à l'IUT Évry.
+        Ce rythme me permet une réelle immersion en entreprise et une mise en pratique régulière de mes acquis.
+        Pour toute question complémentaire, n'hésitez pas à me contacter.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════ INTERESTS - photos rondes ════════════════ -->
+<section class="interests" id="interests">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-tag">Hors bureau</span>
+      <h2 class="section-title">Mes <em>passions</em></h2>
+      <p class="section-intro">
+        Le sport, le voyage, la découverte. Ce qui nourrit ma curiosité,
+        ma persévérance et l'équilibre que j'apporte à ce que j'entreprends.
+      </p>
+    </div>
+
+    <div class="interests-grid reveal">
+      <div class="interest-row">
+        <div class="interest-photo">
+          <img src="images/athletisme1.jpg" alt="Athlétisme">
+        </div>
+        <div class="interest-content">
+          <h3>Athlétisme</h3>
+          <p>Club de Viry-Châtillon depuis 2021. La discipline qui m'a tout appris : persévérance, dépassement, goût de l'effort.</p>
+        </div>
+      </div>
+
+      <div class="interest-row">
+        <div class="interest-photo">
+          <img src="images/musculation.jpg" alt="Musculation">
+        </div>
+        <div class="interest-content">
+          <h3>Musculation</h3>
+          <p>Préparation physique en complément de l'athlétisme. La rigueur d'un programme et la satisfaction de la progression.</p>
+        </div>
+      </div>
+
+      <div class="interest-row">
+        <div class="interest-photo">
+          <img src="images/accrobranche.jpg" alt="Accrobranche">
+        </div>
+        <div class="interest-content">
+          <h3>Activités outdoor</h3>
+          <p>Accrobranche, escalade, natation. Tout ce qui sollicite le corps, la concentration et le dépassement de soi.</p>
+        </div>
+      </div>
+
+      <div class="interest-row">
+        <div class="interest-photo">
+          <img src="images/montagne.jpg" alt="Voyages">
+        </div>
+        <div class="interest-content">
+          <h3>Voyager</h3>
+          <p>Découvrir de nouveaux paysages, comprendre l'histoire des villes, m'ouvrir à d'autres cultures.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="quote-block reveal">
+      <p>
+        Le sport m'a appris que la performance se construit dans le détail,
+        la discipline et la régularité — exactement ce que demande la supply chain.
+        <span class="quote-cite">— Ma philosophie</span>
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════ CONTACT - fond clair ════════════════ -->
+<section class="contact" id="contact">
+  <div class="container">
+    <div class="contact-hero reveal">
+      <span class="section-tag">Contact</span>
+      <h2 class="huge">Travaillons<br><em>ensemble</em></h2>
+      <p>
+        Vous recherchez une alternante motivée en planification ou supply chain ?
+        Discutons-en.
+      </p>
+      <a href="mailto:Margauxgrego@gmail.com" class="contact-cta">
+        Me contacter
+        <span class="contact-cta-arrow">→</span>
+      </a>
+    </div>
+
+    <div class="contact-grid reveal">
+      <a href="mailto:Margauxgrego@gmail.com" class="contact-card">
+        <span class="contact-card-label">Email</span>
+        <span class="contact-card-value">Margauxgrego@gmail.com</span>
+      </a>
+      <a href="tel:+33782796230" class="contact-card">
+        <span class="contact-card-label">Téléphone</span>
+        <span class="contact-card-value">07 82 79 62 30</span>
+      </a>
+      <div class="contact-card">
+        <span class="contact-card-label">Localisation</span>
+        <span class="contact-card-value">Savigny-sur-Orge · 91</span>
+      </div>
+      <div class="contact-card">
+        <span class="contact-card-label">LinkedIn</span>
+        <span class="contact-card-value">@Margaux Grego</span>
+      </div>
+    </div>
+
+    <div class="footer">
+      <div class="footer-mono">© 2026 — MARGAUX GREGO</div>
+      <div class="footer-mono">PORTFOLIO · SUPPLY CHAIN & PLANIFICATION</div>
+    </div>
+  </div>
+</section>
+
+<script>
+  const toggle = document.getElementById('mobileToggle');
+  const navLinks = document.getElementById('navLinks');
+  toggle.addEventListener('click', () => navLinks.classList.toggle('open'));
+  navLinks.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => navLinks.classList.remove('open'));
+  });
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
