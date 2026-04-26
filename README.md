@@ -26,5 +26,5 @@ Portfolio professionnel de Margaux Grego, étudiante en BUT QLIO (Organisation e
 ## 📬 Contact
 
 - **Email** : Margauxgrego@gmail.com
-- **Téléphone** : 07 82 79 62 30
+- **Téléphone** : +33 7 82 79 62 30
 - **Localisation** : Savigny-sur-Orge (91)
